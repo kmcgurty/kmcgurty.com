@@ -30,11 +30,11 @@ await new Deno.Command('deno', {
 
 if (mode === 'dev') {
 	await new Deno.Command('deno', {
-		args: ['x', '-A', 'npm:vite', 'dev']
+		args: ['x', '-A', '-y', 'npm:vite', 'dev']
 	}).spawn().status;
 } else if (mode === 'prod') {
 	await new Deno.Command('deno', {
-		args: ['x', '-A', 'npm:vite', 'build']
+		args: ['x', '-A', '-y', 'npm:vite', 'build']
 	}).spawn().status;
 
 	Deno.env.set('PORT', SVELTEPORT);
