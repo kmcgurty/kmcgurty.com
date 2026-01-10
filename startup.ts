@@ -8,13 +8,12 @@ if (!LIBRETRANSLATEPATH) {
     process.exit(0)
 }
 
-const port = LIBRETRANSLATEPORT || "99999";
-console.log("Spawning LibreTranslate on port ", port);
+console.log("Spawning LibreTranslate on port ", LIBRETRANSLATEPORT);
 
 new Deno.Command(LIBRETRANSLATEPATH, {
     args: [
         "--port",
-        port,
+        LIBRETRANSLATEPORT,
     ],
     stdin: "piped",
     stdout: "piped",
