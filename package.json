@@ -4,8 +4,9 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
-		"dev": "deno --allow-env --env-file --allow-run start.ts dev",
-		"prod": "deno --allow-env --env-file --allow-run start.ts prod",
+		"dev": "vite dev",
+		"build": "vite build",
+		"serve": "vite build && deno --allow-env --allow-read --allow-net ./build/index.js",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
